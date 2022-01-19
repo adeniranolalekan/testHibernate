@@ -18,6 +18,7 @@ public class DatabaseRunner implements CommandLineRunner{
         Optional<User> userFromDatabase = userRepository.findOneByLogin(lowercaseLogin);
         if (!userFromDatabase.isPresent()) {
             userFromDatabase = userRepository.findOneByEmailIgnoreCase(lowercaseLogin);
+            System.out.println(userFromDatabase.get().getPassword());
         }
     }
 }

@@ -47,9 +47,9 @@ public class Company implements Serializable {
     @Column(name = "domain", length = 50)
     private String domain;
 
-    @OneToMany(mappedBy = "company")
-    @JsonIgnore
-    private Set<User> userss = new HashSet<>();
+//    @OneToMany(mappedBy = "company")
+//    @JsonIgnore
+//    private Set<User> users = new HashSet<>();
 
     @OneToMany(mappedBy = "company")
     @JsonIgnore
@@ -99,13 +99,13 @@ public class Company implements Serializable {
         this.secondaryColor = secondaryColor;
     }
 
-    public Set<User> getUserss() {
-        return userss;
-    }
-
-    public void setUserss(Set<User> users) {
-        this.userss = users;
-    }
+//    public Set<User> getUserss() {
+//        return userss;
+//    }
+//
+//    public void setUserss(Set<User> users) {
+//        this.userss = users;
+//    }
 
     public Set<UserInvitation> getUserInvitationss() {
         return userInvitationss;

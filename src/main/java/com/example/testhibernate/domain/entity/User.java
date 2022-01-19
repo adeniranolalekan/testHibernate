@@ -5,7 +5,7 @@ package com.example.testhibernate.domain.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.validation.constraints.Email;
 import org.joda.time.DateTime;
-
+import org.hibernate.annotations.Type;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -66,11 +66,11 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "reset_key", length = 20)
     private String resetKey;
 
-    //@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     @Column(name = "reset_date", nullable = true)
     private DateTime resetDate = null;
 
-    //@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     @Column(name = "tos_acceptance_date", nullable = true)
     private DateTime tosAcceptanceDate = null;
 
